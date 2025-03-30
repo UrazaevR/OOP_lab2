@@ -32,9 +32,9 @@ async Task<string> asyncTask(string url)
 Console.WriteLine("Sync programm");
 Stopwatch timer = new Stopwatch();
 timer.Start();
-Console.WriteLine($"Task 1 answer is: {asyncTask($"http://www.google.com").Result}");
-Console.WriteLine($"Task 2 answer is: {asyncTask($"http://www.vk.com").Result}");
-Console.WriteLine($"Task 3 answer is: {asyncTask($"http://www.github.com").Result}");
+Console.WriteLine($"Task 1 answer is: {asyncTask($"https://random.dog/woof.json").Result}");
+Console.WriteLine($"Task 2 answer is: {asyncTask($"https://rickandmortyapi.com/api/character/1").Result}");
+Console.WriteLine($"Task 3 answer is: {asyncTask($"https://http.hexlet.app/http-api/users/1/posts").Result}");
 
 timer.Stop();
 Console.WriteLine($"The sync program ran for {timer.ElapsedMilliseconds} ms");

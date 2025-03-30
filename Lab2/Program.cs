@@ -31,17 +31,17 @@ async Task<string> asyncTask(string url)
 Console.WriteLine("Async programm");
 Stopwatch timer = new Stopwatch();
 timer.Start();
-var ans1 = asyncTask($"http://www.google.com");
-var ans2 = asyncTask($"http://www.vk.com");
-var ans3 = asyncTask($"http://www.github.com");
+var ans1 = asyncTask($"https://random.dog/woof.json");
+var ans2 = asyncTask($"https://rickandmortyapi.com/api/character/1");
+var ans3 = asyncTask($"https://http.hexlet.app/http-api/users/1/posts");
 
 await ans1;
 await ans2;
 await ans3;
 
-Console.WriteLine($"Task 1 answer is: {ans1.Result}");
-Console.WriteLine($"Task 2 answer is: {ans2.Result}");
-Console.WriteLine($"Task 3 answer is: {ans3.Result}");
+Console.WriteLine($"Task 1 answer is: {ans1.Result}\n");
+Console.WriteLine($"Task 2 answer is: {ans2.Result}\n");
+Console.WriteLine($"Task 3 answer is: {ans3.Result} \n");
 
 timer.Stop();
 Console.WriteLine($"The async program ran for {timer.ElapsedMilliseconds} ms");
