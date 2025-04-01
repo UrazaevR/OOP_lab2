@@ -1,18 +1,18 @@
 ﻿using System.Diagnostics;
 
-async Task<string> AsyncTask(string url)
+async Task<string> SyncTask(string url)
 {
     HttpClient client = new HttpClient();
     try
     {
-        var res = await client.GetAsync(url);
-        if (res.IsSuccessStatusCode)
+        var res = client.GetAsync(url);
+        if (res.Result.IsSuccessStatusCode)
         {
-            return await res.Content.ReadAsStringAsync();
+            return await res.Result.Content.ReadAsStringAsync();
         }
         else
         {
-            Console.WriteLine($"Error: {res.StatusCode}");
+            Console.WriteLine($"Error: {res.Result.StatusCode}");
             return null;
         }
     }
@@ -32,9 +32,9 @@ async Task<string> AsyncTask(string url)
 Console.WriteLine("Sync programm");
 Stopwatch timer = new Stopwatch();
 timer.Start();
-Console.WriteLine($"Task 1 answer is: {AsyncTask($"https://random.dog/woof.json").Result}");
-Console.WriteLine($"Task 2 answer is: {AsyncTask($"https://rickandmortyapi.com/api/character/1").Result}");
-Console.WriteLine($"Task 3 answer is: {AsyncTask($"https://http.hexlet.app/http-api/users/1/posts").Result}");
+Console.WriteLine($"Task 1 answer is: {SyncTask($"https://random.dog/woof.json").Result}");
+Console.WriteLine($"Task 2 answer is: {SyncTask($"https://rickandmortyapi.com/api/character/1").Result}");
+Console.WriteLine($"Task 3 answer is: {SyncTask($"https://http.hexlet.app/http-api/users/1/posts").Result}");
 
 timer.Stop();
 Console.WriteLine($"The sync program ran for {timer.ElapsedMilliseconds} ms");
