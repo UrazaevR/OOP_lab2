@@ -35,9 +35,7 @@ var ans1 = asyncTask($"https://random.dog/woof.json");
 var ans2 = asyncTask($"https://rickandmortyapi.com/api/character/1");
 var ans3 = asyncTask($"https://http.hexlet.app/http-api/users/1/posts");
 
-await ans1;
-await ans2;
-await ans3;
+Task.WaitAll(ans1, ans2, ans3);
 
 Console.WriteLine($"Task 1 answer is: {ans1.Result}\n");
 Console.WriteLine($"Task 2 answer is: {ans2.Result}\n");
