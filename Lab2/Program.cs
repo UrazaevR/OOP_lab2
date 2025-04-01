@@ -31,15 +31,13 @@ async Task<string> asyncTask(string url)
 Console.WriteLine("Async programm");
 Stopwatch timer = new Stopwatch();
 timer.Start();
-var ans1 = asyncTask($"https://random.dog/woof.json");
-var ans2 = asyncTask($"https://rickandmortyapi.com/api/character/1");
-var ans3 = asyncTask($"https://http.hexlet.app/http-api/users/1/posts");
+var ans1 = await asyncTask($"https://random.dog/woof.json");
+var ans2 = await asyncTask($"https://rickandmortyapi.com/api/character/1");
+var ans3 = await asyncTask($"https://http.hexlet.app/http-api/users/1/posts");
 
-Task.WaitAll(ans1, ans2, ans3);
-
-Console.WriteLine($"Task 1 answer is: {ans1.Result}\n");
-Console.WriteLine($"Task 2 answer is: {ans2.Result}\n");
-Console.WriteLine($"Task 3 answer is: {ans3.Result} \n");
+Console.WriteLine($"Task 1 answer is: {ans1}\n");
+Console.WriteLine($"Task 2 answer is: {ans2}\n");
+Console.WriteLine($"Task 3 answer is: {ans3} \n");
 
 timer.Stop();
 Console.WriteLine($"The async program ran for {timer.ElapsedMilliseconds} ms");
