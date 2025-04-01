@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-async Task<string> asyncTask(string url)
+async Task<string> AsyncTask(string url)
 {
     HttpClient client = new HttpClient();
     try
@@ -31,9 +31,9 @@ async Task<string> asyncTask(string url)
 Console.WriteLine("Async programm");
 Stopwatch timer = new Stopwatch();
 timer.Start();
-var ans1 = await asyncTask($"https://random.dog/woof.json");
-var ans2 = await asyncTask($"https://rickandmortyapi.com/api/character/1");
-var ans3 = await asyncTask($"https://http.hexlet.app/http-api/users/1/posts");
+var ans1 = await AsyncTask($"https://random.dog/woof.json");
+var ans2 = await AsyncTask($"https://rickandmortyapi.com/api/character/1");
+var ans3 = await AsyncTask($"https://http.hexlet.app/http-api/users/1/posts");
 
 Console.WriteLine($"Task 1 answer is: {ans1}\n");
 Console.WriteLine($"Task 2 answer is: {ans2}\n");

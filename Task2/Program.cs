@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-async Task<string> asyncTask(string url)
+async Task<string> AsyncTask(string url)
 {
     HttpClient client = new HttpClient();
     try
@@ -32,9 +32,9 @@ async Task<string> asyncTask(string url)
 Console.WriteLine("Sync programm");
 Stopwatch timer = new Stopwatch();
 timer.Start();
-Console.WriteLine($"Task 1 answer is: {asyncTask($"https://random.dog/woof.json").Result}");
-Console.WriteLine($"Task 2 answer is: {asyncTask($"https://rickandmortyapi.com/api/character/1").Result}");
-Console.WriteLine($"Task 3 answer is: {asyncTask($"https://http.hexlet.app/http-api/users/1/posts").Result}");
+Console.WriteLine($"Task 1 answer is: {AsyncTask($"https://random.dog/woof.json").Result}");
+Console.WriteLine($"Task 2 answer is: {AsyncTask($"https://rickandmortyapi.com/api/character/1").Result}");
+Console.WriteLine($"Task 3 answer is: {AsyncTask($"https://http.hexlet.app/http-api/users/1/posts").Result}");
 
 timer.Stop();
 Console.WriteLine($"The sync program ran for {timer.ElapsedMilliseconds} ms");
